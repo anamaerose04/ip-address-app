@@ -19,7 +19,7 @@ def get_mock_geolocation(ip):
     }
     return mock_data.get(ip, {"country": "Unknown", "city": "Unknown", "org": "Unknown"})
 
-# Feature 2: Output as JSON - Adona
+# Feature 2: Output as JSON - Adona Eve
 def output_as_json(geo_info):
     return json.dumps(geo_info, indent=4)
 
