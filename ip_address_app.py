@@ -10,7 +10,7 @@ def validate_ip(ip):
     except ValueError:
         return False
 
-# Function to get geolocation information (Mock Data Placeholder) - Ana
+# Feature 1: Mock Geolocation - Ana
 def get_mock_geolocation(ip):
     mock_data = {
         "192.168.0.1": {"country": "US", "city": "New York", "org": "Local Network"},
@@ -19,9 +19,13 @@ def get_mock_geolocation(ip):
     }
     return mock_data.get(ip, {"country": "Unknown", "city": "Unknown", "org": "Unknown"})
 
+# Feature 2: Output as JSON - Adona Eve
+def output_as_json(geo_info):
+    return json.dumps(geo_info, indent=4)
+
 # Function to print geolocation information
 def print_geolocation(geo_info):
-    print(f"Geolocation: {geo_info['country']}, {geo_info['city']}, {geo_info['org']}")
+    print(output_as_json(geo_info))
 
 # Main function
 def main():
@@ -34,7 +38,7 @@ def main():
             break
 
         if validate_ip(ip_input):
-            geo_info = get_geolocation(ip_input)
+            geo_info = print_geolocation(ip_input)
             print_geolocation(geo_info)
         else:
             print("Invalid IP address.")
