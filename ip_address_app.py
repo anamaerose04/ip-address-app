@@ -23,6 +23,12 @@ def get_mock_geolocation(ip):
 def output_as_json(geo_info):
     return json.dumps(geo_info, indent=4)
 
+# Feature 3: Save Search History
+def save_search_history(ip, geo_info):
+    with open("geo_history.txt", "a") as f:
+        f.write(f"IP: {ip} - Geolocation: {output_as_json(geo_info)}\n")
+    print("Search history saved.")
+
 # Function to print geolocation information
 def print_geolocation(geo_info):
     print(output_as_json(geo_info))
@@ -40,6 +46,7 @@ def main():
         if validate_ip(ip_input):
             geo_info = print_geolocation(ip_input)
             print_geolocation(geo_info)
+            save_search_history(ip_input, geo_info)
         else:
             print("Invalid IP address.")
 
