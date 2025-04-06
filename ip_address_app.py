@@ -10,11 +10,14 @@ def validate_ip(ip):
     except ValueError:
         return False
 
-# Function to get geolocation information (Mock Data Placeholder)
-def get_geolocation(ip):
-    # Placeholder for future geolocation logic (e.g., API call or mock data)
-    geo_info = {"country": "Unknown", "city": "Unknown", "org": "Unknown"}
-    return geo_info
+# Function to get geolocation information (Mock Data Placeholder) - Ana
+def get_mock_geolocation(ip):
+    mock_data = {
+        "192.168.0.1": {"country": "US", "city": "New York", "org": "Local Network"},
+        "8.8.8.8": {"country": "US", "city": "Mountain View", "org": "Google"},
+        "2001:0db8:85a3:0000:0000:8a2e:0370:7334": {"country": "US", "city": "Los Angeles", "org": "Google"}
+    }
+    return mock_data.get(ip, {"country": "Unknown", "city": "Unknown", "org": "Unknown"})
 
 # Function to print geolocation information
 def print_geolocation(geo_info):
