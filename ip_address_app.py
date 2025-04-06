@@ -1,3 +1,10 @@
+# Team Name: SIMS
+# Members:
+# Ana Mae Rose Cagang
+# Adona Eve Hijara
+# Kimberly Mahilum
+# Nica Mapula
+
 import requests
 import ipaddress
 import json
@@ -23,13 +30,13 @@ def get_mock_geolocation(ip):
 def output_as_json(geo_info):
     return json.dumps(geo_info, indent=4)
 
-# Feature 3: Save Search History
+# Feature 3: Save Search History - Nica
 def save_search_history(ip, geo_info):
     with open("geo_history.txt", "a") as f:
         f.write(f"IP: {ip} - Geolocation: {output_as_json(geo_info)}\n")
     print("Search history saved.")
 
-# Feature 3: Search History Display
+# Feature 4: Search History Display - Kim
 def display_search_history():
     try:
         with open("geo_history.txt", "r") as f:
