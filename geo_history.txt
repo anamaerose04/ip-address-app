@@ -1,0 +1,12 @@
+IP: 192.168.254.103 - Geolocation: {
+    "ip": "192.168.254.103",
+    "bogon": true
+}
+IP: 192.168.254.103 - Geolocation: {
+    "ip": "192.168.254.103",
+    "bogon": true
+}
+IP: 192.168.254.103 - Geolocation: {
+    "ip": "192.168.254.103",
+    "bogon": true
+}
