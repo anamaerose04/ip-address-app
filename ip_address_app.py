@@ -29,6 +29,14 @@ def save_search_history(ip, geo_info):
         f.write(f"IP: {ip} - Geolocation: {output_as_json(geo_info)}\n")
     print("Search history saved.")
 
+# Feature 3: Search History Display
+def display_search_history():
+    try:
+        with open("geo_history.txt", "r") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("No search history found.")
+    
 # Function to print geolocation information
 def print_geolocation(geo_info):
     print(output_as_json(geo_info))
@@ -49,6 +57,9 @@ def main():
             save_search_history(ip_input, geo_info)
         else:
             print("Invalid IP address.")
-
+            show_history = input("Would you like to see the search history? (yes/no): ").lower()
+            if show_history == "yes":
+                display_search_history()
+            
 # Run the main function
 main()
